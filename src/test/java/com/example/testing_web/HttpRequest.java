@@ -8,7 +8,7 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 import static org.assertj.core.api.Assertions.assertThat;
 import org.springframework.web.client.RestTemplate;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+
 public class HttpRequest {
 
 
@@ -18,7 +18,7 @@ public class HttpRequest {
     @Autowired
     private TestRestTemplate testRestTemplate;
 
-    @Test
+
     void greetingShouldReturnDefaultMessage(){
         assertThat(this.testRestTemplate.getForObject("http://localhost:"+port+"/",String.class)).contains("Hello,World");
     }
